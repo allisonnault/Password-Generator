@@ -34,13 +34,17 @@
           //  we have an array to store each criteria
             // var possibleChars = [];
             // var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            // var specialChar = ["!", """, "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "`", "{", "|", "}", "~"]
+
             //  var result = [];
         // if(userOptions.hasNumeric === true){
               // possibleChars = possibleChar.concat(numericCharacters);
         // }
 
       // the password is displayed to the screen
-
+// const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+// const alphabet = alpha.map((x) => String.fromCharCode(x));
+// console.log(alphabet);
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
