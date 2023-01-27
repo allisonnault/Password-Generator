@@ -9,16 +9,14 @@ var numericChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var specialChar = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\ ", "\]", "^", "_", "`", "{", "|", "}", "~"];
 
-var charSelection = [];
-var chosenPassword = [];
+
+
 
 
 // Write password to the #password input
 function writePassword() {
 
   var password = generatePassword();
-
-
 
   var passwordText = document.querySelector("#password");
 
@@ -29,39 +27,34 @@ function writePassword() {
 
 function generatePassword() {
   var passwordLength = parseInt(prompt("How many characters would you like your password to contain?"));
-  console.log(passwordLength);
 
+  var charSelection = [];
+  var chosenPassword = [];
   if ((passwordLength < 8) || (passwordLength > 128)) {
     alert("Please select a number between 8 and 129");
     generatePassword();
   }
 
   var hasNumeric = confirm("Click OK to confirm including numeric characters.");
-  console.log(hasNumeric);
   if (hasNumeric) {
     charSelection.push(...numericChar); 
     // the ... sends just the values into the new array, instead of creating an object
   }
 
   var hasLower = confirm("Click OK to confirm including Lower characters.");
-  console.log(hasLower);
   if (hasLower) {
     charSelection.push(...lowerChar);
   }
 
   var hasUpper = confirm("Click OK to confirm including Upper characters.");
-  console.log(hasUpper);
   if (hasUpper) {
     charSelection.push(...upperChar);
   }
 
   var hasSpecial = confirm("Click OK to confirm including Special characters.");
-  console.log(hasSpecial);
   if (hasSpecial) {
     charSelection.push(...specialChar);
   }
-
-  console.log(charSelection);
 
   if ((hasNumeric === false) && (hasLower === false) && (hasUpper === false) && (hasSpecial === false)) {
     alert('Must select at least one character type');
@@ -74,7 +67,6 @@ function generatePassword() {
       chosenPassword.push(strChar);
     }
   
-  console.log(chosenPassword.join(""));
 return chosenPassword.join("");
 
 }
