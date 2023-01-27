@@ -31,7 +31,7 @@ function generatePassword() {
   var passwordLength = parseInt(prompt("How many characters would you like your password to contain?"));
   console.log(passwordLength);
 
-  if ((passwordLength < 8) || (passwordLength > 129)) {
+  if ((passwordLength < 8) || (passwordLength > 128)) {
     alert("Please select a number between 8 and 129");
     generatePassword();
   }
@@ -39,7 +39,8 @@ function generatePassword() {
   var hasNumeric = confirm("Click OK to confirm including numeric characters.");
   console.log(hasNumeric);
   if (hasNumeric) {
-    charSelection.push(...numericChar);
+    charSelection.push(...numericChar); 
+    // the ... sends just the values into the new array, instead of creating an object
   }
 
   var hasLower = confirm("Click OK to confirm including Lower characters.");
