@@ -1,5 +1,8 @@
 # Password-Generator
 Challenge 03
+[Password Generator](https://allisonnault.github.io/Password-Generator/)
+
+![passwordGen image](./assets/images/passwordGen.png)
 
 ## Description
 
