@@ -45,22 +45,19 @@ if (hasSpecial) {
   charSelection.push(specialChar);
 }
 
+console.log(charSelection);
+
 if ((hasNumeric === false) && (hasLower === false) && (hasUpper === false) && (hasSpecial === false)){
   alert('Must select at least one character type');
   return writePassword();}
 
 var availableChar = Object.values(charSelection);
 console.log(availableChar);
-
-    
-
-
-
 }
 
+  // var password = generatePassword()
     
-    // var password = generatePassword();
-    // var passwordText = document.querySelector("#password");
+  // var passwordText = document.querySelector("#password");
 
   // passwordText.value = password;
 
