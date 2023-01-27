@@ -9,7 +9,7 @@ var numericChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var specialChar = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\ ", "\]", "^", "_", "`", "{", "|", "}", "~"];
 
-var allCharacters = upperChar.concat(lowerChar, numericChar, specialChar);
+var charSelection = [];
 
 
 // Write password to the #password input
@@ -23,20 +23,34 @@ if((passwordLenght < 8) || (passwordLenght > 129)) {
 
 var hasNumeric = confirm("Click OK to confirm including numeric characters.");
 console.log(hasNumeric);
+if (hasNumeric) {
+  charSelection.push(numericChar);
+}
 
 var hasLower = confirm("Click OK to confirm including Lower characters.");
 console.log(hasLower);
+if (hasLower) {
+  charSelection.push(lowerChar);
+}
   
 var hasUpper = confirm("Click OK to confirm including Upper characters.");
 console.log(hasUpper);
+if (hasUpper) {
+  charSelection.push(upperChar);
+}
   
 var hasSpecial = confirm("Click OK to confirm including Special characters.");
 console.log(hasSpecial);
+if (hasSpecial) {
+  charSelection.push(specialChar);
+}
 
 if ((hasNumeric === false) && (hasLower === false) && (hasUpper === false) && (hasSpecial === false)){
   alert('Must select at least one character type');
   return writePassword();}
 
+var availableChar = Object.values(charSelection);
+console.log(availableChar);
 
     
 
